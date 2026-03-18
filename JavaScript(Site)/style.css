@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.7;
+    background-color: aliceblue;
+    color: #ce9eff;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  header .container {
+    display: flex;
+     justify-content: space-between;
+     align-items: center; 
+     height: 100%;
+   }
+
+  h1{
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    size: 110px;
+  }
