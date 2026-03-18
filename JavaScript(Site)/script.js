@@ -1,13 +1,13 @@
-let h1 = document.getElementById("title");
-console.log(h1);
+let botaoAlerta = document.getElementById("button-alert");
+console.log(botaoAlerta);
 
-h1.textContent = "LABUBU";
-h1.style.color = "blue";
+function gerarAlerta(){
+    alert("Não vai dar miga ):")
+}
 
-let p = document.querySelector(".paragrafo");
-console.log(p);
+botaoAlerta.addEventListener("click", function(){
+    let novoElemento = document.createElement("p");
+    novoElemento.textContent = "la ";
+    document.body.appendChild(novoElemento);
 
-p.textContent = "BAhhhhh";
-
-let div = document.getElementById("background");
-div.style.backgroundColor = "purple";
+});
