@@ -42,9 +42,34 @@ function adicionarAoCarrinho(id){
     else{
         produtosCarrinho.push(
             {
-                
+                id: produto.id,
+                nome: produto.nome,
+                preco: produto.preco,
+                quantidade: 1
             }
         );
 
     }
+}
+
+function renderizarCarrinho() {
+    const lista = document.getElementById("lista-carrinho")
+    const total = document.getElementById("total")
+
+    lista.innerHTML = "";
+
+    let somaTotal = 0;
+
+    produtosCarrinho.forEach( produto => {
+        somaTotal = somaTotal + (produto.preco + produto.quantidade);
+
+        const div = document.createElement("div");
+        div.className = "cart-item"
+
+        div.innerHTML `
+            
+        
+        `;
+
+    });
 }
