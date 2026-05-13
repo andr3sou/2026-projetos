@@ -19,8 +19,9 @@ function renderizarProduto(){
         div.className = "product";
 
         div.innerHTML = `
-        <span>${produto.nome} - R$ ${produto.preco}<\span>
+        <span>${produto.nome} - R$ ${produto.preco}</span>
         <button onclick="adicionarAoCarrinho(${produto.id})">Adicionar</button>
+
         `;
         lista.appendChild(div);
     });
@@ -50,6 +51,8 @@ function adicionarAoCarrinho(id){
         );
 
     }
+
+    renderizarCarrinho();
 }
 
 function renderizarCarrinho() {
@@ -66,10 +69,26 @@ function renderizarCarrinho() {
         const div = document.createElement("div");
         div.className = "cart-item"
 
-        div.innerHTML `
-            
-        
+        div.innerHTML = `
+            <span>${produto.nome} (x${produto.quantidade})
+            <div>
+              -R$ ${produto.preco * produto.quantidade}
+                </span> 
+                <button onclick="mudarQuantidade(${produto.id}, 1)">
+                    +
+                </button>
+                <button onclick="mudarQuantidade(${produto.id}, -1)">
+                    -
+                </button>
+                 <button onclick="removerProduto(${produto.id})">
+                    Remover
+                </button>
+                </div>
         `;
-
+            lista.appendChild(div);
     });
+
+    total.textContent = "Total: R$:" + somaTotal;
+
 }
+
