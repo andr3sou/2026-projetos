@@ -72,7 +72,7 @@ function renderizarCarrinho() {
         div.innerHTML = `
             <span>${produto.nome} (x${produto.quantidade})
             <div>
-              -R$ ${produto.preco * produto.quantidade}
+              R$ ${produto.preco * produto.quantidade}
                 </span> 
                 <button onclick="mudarQuantidade(${produto.id}, 1)">
                     +
@@ -92,3 +92,17 @@ function renderizarCarrinho() {
 
 }
 
+function mudarQuantidade(id, valor){
+    produtosCarrinho = produtosCarrinho.map(produto =>{
+        if (produto.id == id){
+            return{
+                id: produto.id,
+                nome: produto.nome,
+                preco: produto.preco,
+                quantidade: produto.quantidade + valor 
+            }
+        }
+            return produto;
+    }) .filter;
+    renderizarCarrinho();
+}
